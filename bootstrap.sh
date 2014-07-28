@@ -44,11 +44,14 @@ echo "Installing Programming Environments..."
 brew install maven sbt scala node
 
 echo "Installing RVM and Ruby..."
-\curl -L https://get.rvm.io | bash -s stable --ruby
+\curl -L https://get.rvm.io | bash -s stable --ruby 2.0.0
 source $HOME/.rvm/scripts/rvm
 rvm use default --default
 gem update --system
 gem install bundler
+gem install linner
+gem install therubyracer
+gem install pry
 
 echo "Embracing Cask..."
 brew tap phinze/homebrew-cask
