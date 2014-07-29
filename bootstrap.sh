@@ -44,7 +44,7 @@ echo "Installing Programming Environments..."
 brew install maven sbt scala node
 
 echo "Installing RVM and Ruby..."
-\curl -L https://get.rvm.io | bash -s stable --ruby 2.0.0
+\curl -L https://get.rvm.io | bash -s stable --ruby=2.0.0
 source $HOME/.rvm/scripts/rvm
 rvm use default --default
 gem update --system
