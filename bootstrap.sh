@@ -24,6 +24,9 @@ brew tap homebrew/versions
 echo "Installing Git..."
 brew install git
 
+echo "Installing autojump"
+brew install autojump
+
 brew update
 
 echo "Installing Build Essentials..."
@@ -38,25 +41,26 @@ echo "Installing Databases..."
 brew install mysql redis
 
 echo "Installing Web Servers..."
-brew install nginx jetty8
+brew install nginx
 
-echo "Installing Programming Environments..."
-brew install maven sbt scala node
-
-echo "Installing RVM and Ruby..."
-\curl -L https://get.rvm.io | bash -s stable --ruby=2.0.0
-source $HOME/.rvm/scripts/rvm
-rvm use default --default
-gem update --system
-gem install bundler
-gem install linner
-gem install therubyracer
-gem install pry
+echo "Installing NVM and Node"
+\wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.zshrc
+echo nvm version: $(nvm --version)
+NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install 9
+echo npm version: $(npm -v)
+echo node version: $(node -v)
+npm config set @ali:registry http://registry.npm.alibaba-inc.com/
+npm config set @alife:registry http://registry.npm.alibaba-inc.com/
+npm config set @terminus:registry http://registry.npm.terminus.com/
+npm config set registry http://registry.npm.taobao.org/
+npm i -g @terminus/herd
+npm i -g @terminus/shepherd
 
 echo "Embracing Cask..."
 brew tap phinze/homebrew-cask
 brew install brew-cask
 
 echo "Installing Essential Applications with Cask..."
-brew cask install google-chrome virtualbox vagrant macvim textmate iterm2 dropbox droplr intellij-community sequel-pro alfred
-brew cask alfred link
+brew cask install google-chrome virtualbox iterm2 sequel-pro alfred2 visual-studio-code sublime-text
+brew cask alfred2 link
