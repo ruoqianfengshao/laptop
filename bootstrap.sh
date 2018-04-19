@@ -52,7 +52,7 @@ echo npm version: $(npm -v)
 echo node version: $(node -v)
 npm config set @ali:registry http://registry.npm.alibaba-inc.com/
 npm config set @alife:registry http://registry.npm.alibaba-inc.com/
-npm config set @terminus:registry http://registry.npm.terminus.com/
+npm config set @terminus:registry http://registry.npm.terminus.io/
 npm config set registry http://registry.npm.taobao.org/
 npm i -g @terminus/herd
 npm i -g @terminus/shepherd
