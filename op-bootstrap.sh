@@ -86,12 +86,7 @@ npm i -g @terminus/herd
 npm i -g @terminus/shepherd
 echo "complete install frontend env..."
 
-
 echo "Embracing Cask..."
 brew tap phinze/homebrew-cask
 brew install brew-cask
 
-echo "Installing Essential Applications with Cask..."
-brew cask install google-chrome virtualbox iterm2 sequel-pro alfred2 visual-studio-code sublime-text
-brew cask alfred2 link
-echo "complete install applications..."
