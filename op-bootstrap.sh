@@ -77,7 +77,12 @@ echo "complete install db..."
 
 echo "Installing NVM and Node"
 \wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-source ~/.zshrc
+if [ -e "$HOME/.zshrc" ]
+then
+  source "~/.zshrc"
+else
+  source "~/.bachrc"
+fi
 echo nvm version: $(nvm --version)
 NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install 9
 echo npm version: $(npm -v)
