@@ -64,12 +64,16 @@ if [[ ! -x $(which redis-cli) ]]; then
   brew install redis
 fi
 
+if [[ ! -x $(which mysql) ]]; then
+  echo "Installing mysql..."
+  brew install mysql
+fi
+
 if [[ ! -x $(which nginx) ]]; then
   echo "Installing Web Servers..."
   brew install nginx
 fi
 echo "complete install db..."
-
 
 echo "Installing NVM and Node"
 \wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
