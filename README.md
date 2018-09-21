@@ -22,7 +22,7 @@ script for optimizing exist env, no dependency with zsh
 
 没有安装 zsh，使用以下命令，不会安装 zsh
 
-`bash <(curl -sL https://raw.github.com/TerminusHQ/laptop/master/ op-bootstrap.sh)`
+`bash <(curl -sL https://raw.github.com/TerminusHQ/laptop/master/op-bootstrap.sh)`
 
 安装了 zsh，使用以下命令，不会重复安装 zsh
 
