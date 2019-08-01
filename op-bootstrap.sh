@@ -84,7 +84,7 @@ else
   source "~/.bachrc"
 fi
 echo nvm version: $(nvm --version)
-NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install 9
+NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install nvm ls-remote
 echo npm version: $(npm -v)
 echo node version: $(node -v)
 npm config set @ali:registry http://registry.npm.alibaba-inc.com/
