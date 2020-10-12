@@ -43,17 +43,17 @@ brew install mysql redis
 echo "Installing Web Servers..."
 brew install nginx
 
-echo "Installing NVM and Node"
-\wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+echo "Installing n and Node"
+\wget -qO- https://git.io/n-install | bash
 source ~/.zshrc
-echo nvm version: $(nvm --version)
-NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install stable
+echo n version: $(n --version)
+n lts
 echo npm version: $(npm -v)
 echo node version: $(node -v)
-npm config set @ali:registry http://registry.npm.alibaba-inc.com/
-npm config set @alife:registry http://registry.npm.alibaba-inc.com/
-npm config set @terminus:registry http://registry.npm.terminus.io/
-npm config set registry http://registry.npm.taobao.org/
+npm config set @ali:registry https://registry.npm.alibaba-inc.com/
+npm config set @alife:registry https://registry.npm.alibaba-inc.com/
+npm config set @terminus:registry https://registry.npm.terminus.io/
+npm config set registry https://registry.npm.taobao.org/
 npm i -g @terminus/herd
 npm i -g @terminus/shepherd
 
@@ -62,5 +62,5 @@ brew tap phinze/homebrew-cask
 brew install brew-cask
 
 echo "Installing Essential Applications with Cask..."
-brew cask install google-chrome virtualbox iterm2 sequel-pro alfred2 visual-studio-code sublime-text
+brew cask install google-chrome virtualbox iterm2 sequel-pro alfred2 visual-studio-code
 brew cask alfred2 link
