@@ -58,6 +58,29 @@ do
 done
 echo "complete install tool..."
 
+
+echo "Installing React Native environment..."
+if [[ ! -x $(which watchman) ]]; then
+  echo "Installing watchman..."
+  brew install watchman
+fi
+
+if [[ ! -x $(which ruby) ]]; then
+  echo "Installing ruby..."
+  gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  \curl -sSL https://get.rvm.io | bash -s stable
+  source ~/.bashrc
+  source ~/.bash_profile
+  echo "ruby_url=https://cache.ruby-china.com/pub/ruby" > ~/.rvm/user/db
+fi
+
+if [[ ! -x $(which pod) ]]; then
+  echo "Installing coacopads..."
+  gem install cocoapods
+fi
+
+echo "complete install watchman, ruby, coacopads."
+
 echo "Installing db..."
 if [[ ! -x $(which redis-cli) ]]; then
   echo "Installing redis..."
@@ -87,13 +110,13 @@ echo nvm version: $(nvm --version)
 NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node nvm install nvm ls-remote
 echo npm version: $(npm -v)
 echo node version: $(node -v)
-npm config set @ali:registry http://registry.npm.alibaba-inc.com/
-npm config set @alife:registry http://registry.npm.alibaba-inc.com/
-npm config set @terminus:registry http://registry.npm.terminus.io/
-npm config set registry http://registry.npm.taobao.org/
+npm config set @ali:registry https://registry.npm.alibaba-inc.com/
+npm config set @alife:registry https://registry.npm.alibaba-inc.com/
+npm config set @terminus:registry https://registry.npm.terminus.io/
+npm config set registry https://registry.npm.taobao.org/
+npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
 npm i -g @terminus/herd
-npm i -g @terminus/shepherd
-echo "complete install frontend env..."
+echo "complete install Node env..."
 
 echo "Embracing Cask..."
 brew tap phinze/homebrew-cask
